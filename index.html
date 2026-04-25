@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade 3 End-of-Year Projects</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --english: #2563a8;
+    --english-light: #dbeafe;
+    --english-mid: #93c5fd;
+    --maths: #b45309;
+    --maths-light: #fef3c7;
+    --maths-mid: #fcd34d;
+    --science: #166534;
+    --science-light: #dcfce7;
+    --science-mid: #86efac;
+    --ink: #1a1a2e;
+    --soft: #f7f6f2;
+    --rule: #e5e0d8;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--soft);
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 0;
+  }
+
+  /* ── COVER HEADER ── */
+  .cover {
+    background: var(--ink);
+    color: white;
+    padding: 52px 60px 44px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: 40%;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.03);
+  }
+
+  .school-label {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 18px;
+  }
+
+  .cover h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 900;
+    line-height: 1.1;
+    max-width: 620px;
+  }
+
+  .cover h1 em {
+    font-style: normal;
+    color: #fcd34d;
+  }
+
+  .cover-meta {
+    margin-top: 28px;
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .meta-pill {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 100px;
+    padding: 7px 18px;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+  }
+
+  .note-strip {
+    background: #fcd34d;
+    color: var(--ink);
+    padding: 14px 60px;
+    font-size: 13.5px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .note-strip span { font-size: 16px; }
+
+  /* ── MAIN GRID ── */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 40px;
+  }
+
+  /* ── PROJECT CARD ── */
+  .card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 10px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    display: flex;
+    flex-direction: column;
+    page-break-inside: avoid;
+  }
+
+  .card-header {
+    padding: 28px 28px 22px;
+    position: relative;
+  }
+
+  .card.english .card-header { background: var(--english); }
+  .card.maths   .card-header { background: var(--maths); }
+  .card.science .card-header { background: var(--science); }
+
+  .subject-tag {
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 8px;
+  }
+
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    line-height: 1.25;
+  }
+
+  .card-icon {
+    position: absolute;
+    top: 24px; right: 24px;
+    font-size: 42px;
+    opacity: 0.25;
+  }
+
+  .card-body { padding: 24px 28px; flex: 1; }
+
+  /* ── TASK BLOCK ── */
+  .task-block {
+    background: var(--soft);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 20px;
+    border-left: 3px solid transparent;
+  }
+
+  .card.english .task-block { border-color: var(--english); }
+  .card.maths   .task-block { border-color: var(--maths); }
+  .card.science .task-block { border-color: var(--science); }
+
+  .task-block h3 {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 8px;
+  }
+
+  .task-block p { font-size: 14px; line-height: 1.55; color: #444; }
+
+  /* ── CHECKLIST ── */
+  .checklist { list-style: none; margin-bottom: 20px; }
+  .checklist li {
+    font-size: 13.5px;
+    padding: 5px 0 5px 26px;
+    position: relative;
+    color: #333;
+    border-bottom: 1px solid var(--rule);
+    line-height: 1.5;
+  }
+
+  .checklist li:last-child { border-bottom: none; }
+
+  .checklist li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    font-size: 11px;
+    font-weight: 700;
+    top: 6px;
+  }
+
+  .card.english .checklist li::before { color: var(--english); }
+  .card.maths   .checklist li::before { color: var(--maths); }
+  .card.science .checklist li::before { color: var(--science); }
+
+  /* ── TWO-COL MINI ── */
+  .mini-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .mini-box {
+    background: var(--soft);
+    border-radius: 10px;
+    padding: 13px 14px;
+  }
+
+  .mini-box h4 {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    margin-bottom: 7px;
+  }
+
+  .card.english .mini-box h4 { color: var(--english); }
+  .card.maths   .mini-box h4 { color: var(--maths); }
+  .card.science .mini-box h4 { color: var(--science); }
+
+  .mini-box ul { list-style: none; }
+  .mini-box ul li {
+    font-size: 12.5px;
+    padding: 2.5px 0;
+    color: #555;
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .mini-box ul li::before { content: '·'; font-size: 18px; line-height: 1; margin-top: -1px; color: #aaa; }
+
+  /* ── RUBRIC ── */
+  .rubric { margin-top: 4px; }
+
+  .rubric-title {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 10px;
+  }
+
+  .rubric-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .rubric-row:last-child { border-bottom: none; }
+
+  .pts-badge {
+    min-width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .card.english .pts-badge { background: var(--english); }
+  .card.maths   .pts-badge { background: var(--maths); }
+  .card.science .pts-badge { background: var(--science); }
+
+  .rubric-text { font-size: 12.5px; color: #444; line-height: 1.4; }
+
+  /* ── SHARED RUBRIC PANEL ── */
+  .rubric-panel {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px 56px;
+  }
+
+  .rubric-panel-inner {
+    background: var(--ink);
+    color: white;
+    border-radius: 20px;
+    padding: 36px 40px;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .rubric-panel-inner h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fcd34d;
+  }
+
+  .rubric-panel-inner p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 10px;
+    line-height: 1.6;
+  }
+
+  .shared-rubric-rows { display: flex; flex-direction: column; gap: 10px; }
+
+  .sr-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 10px;
+    padding: 11px 16px;
+  }
+
+  .sr-badge {
+    min-width: 38px; height: 38px;
+    background: #fcd34d;
+    color: var(--ink);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .sr-text { font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.4; }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #aaa;
+    padding: 0 50px;
+    margin-bottom: 4px;
+    margin-top: 0;
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    body { background: white; }
+    .cover { background: #1a1a2e !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .card { box-shadow: none; border: 1px solid #ddd; }
+    .projects-grid { padding: 24px 20px; }
+    .rubric-panel { padding: 0 30px 30px; }
+    .note-strip { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  @media (max-width: 700px) {
+    .cover { padding: 36px 24px 30px; }
+    .note-strip { padding: 14px 24px; }
+    .projects-grid { padding: 24px 12px; }
+    .rubric-panel { padding: 0 12px 40px; }
+    .rubric-panel-inner { grid-template-columns: 1fr; gap: 20px; }
+    .section-label { padding: 0 22px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="school-label">Bright Future International School · Grade 3 · 2025–2026</div>
+  <h1>End-of-Year<br><em>Projects</em></h1>
+  <div class="cover-meta">
+    <div class="meta-pill">📚 3 Subjects</div>
+    <div class="meta-pill">⭐ 10 Marks Each</div>
+    <div class="meta-pill">🏠 Home + School</div>
+    <div class="meta-pill">🗣 1-Minute Presentation</div>
+  </div>
+</div>
+
+<div class="note-strip">
+  <span>📋</span>
+  These projects count toward the final 10 project marks. They are designed to be simple, short, and suitable for Grade 3 students.
+</div>
+
+<!-- PROJECTS -->
+<p class="section-label" style="padding-top:44px;">Subject Projects</p>
+<div class="projects-grid">
+
+  <!-- ENGLISH -->
+  <div class="card english">
+    <div class="card-header">
+      <div class="subject-tag">English</div>
+      <div class="card-title">Helper Robot<br>Poster</div>
+      <div class="card-icon">🤖</div>
+    </div>
+    <div class="card-body">
+
+      <div class="task-block">
+        <h3>The Task</h3>
+        <p>Each student designs a helper robot and prepares a small poster, then gives a <strong>1-minute</strong> presentation.</p>
+      </div>
+
+      <div class="rubric-title" style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#888;margin-bottom:8px;">Poster Must Include</div>
+      <ul class="checklist">
+        <li>A drawing of the robot</li>
+        <li>The robot's name</li>
+        <li>5 sentences about what the robot can do</li>
+        <li>3 instructions for using the robot</li>
+      </ul>
+
+      <div class="mini-cols">
+        <div class="mini-box">
+          <h4>🏠 At Home</h4>
+          <ul>
+            <li>Draw the robot</li>
+            <li>Write the first draft</li>
+          </ul>
+        </div>
+        <div class="mini-box">
+          <h4>🏫 At School</h4>
+          <ul>
+            <li>Finalize the poster</li>
+            <li>Practise speaking</li>
+            <li>Present the project</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mini-box" style="margin-bottom:20px;">
+        <h4>🎨 Materials Needed</h4>
+        <ul>
+          <li>Paper or card</li>
+          <li>Pencils &amp; coloured pencils</li>
+        </ul>
+      </div>
+
+      <div class="rubric">
+        <div class="rubric-title">Marking — Out of 10</div>
+        <div class="rubric-row"><div class="pts-badge">3</div><div class="rubric-text">Ideas are clear and suitable</div></div>
+        <div class="rubric-row"><div class="pts-badge">3</div><div class="rubric-text">Sentences are understandable and mostly correct</div></div>
+        <div class="rubric-row"><div class="pts-badge">2</div><div class="rubric-text">Instructions make sense</div></div>
+        <div class="rubric-row"><div class="pts-badge">2</div><div class="rubric-text">Student explains the robot clearly</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MATHS -->
+  <div class="card maths">
+    <div class="card-header">
+      <div class="subject-tag">Mathematics</div>
+      <div class="card-title">3D Shape<br>Museum</div>
+      <div class="card-icon">🔷</div>
+    </div>
+    <div class="card-body">
+
+      <div class="task-block">
+        <h3>The Task</h3>
+        <p>Each student builds one 3D shape and prepares a small fact card, then gives a <strong>1-minute</strong> explanation.</p>
+      </div>
+
+      <div class="rubric-title" style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#888;margin-bottom:8px;">Project Must Include</div>
+      <ul class="checklist">
+        <li>The 3D model</li>
+        <li>The name of the shape</li>
+        <li>Number of faces, edges &amp; vertices</li>
+        <li>1 sentence comparing it to another shape</li>
+      </ul>
+
+      <div class="mini-cols">
+        <div class="mini-box">
+          <h4>🏠 At Home</h4>
+          <ul>
+            <li>Cut &amp; fold the net</li>
+            <li>Glue the model</li>
+          </ul>
+        </div>
+        <div class="mini-box">
+          <h4>🏫 At School</h4>
+          <ul>
+            <li>Label the shape</li>
+            <li>Complete the fact card</li>
+            <li>Present the project</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mini-box" style="margin-bottom:20px;">
+        <h4>🎨 Materials Needed</h4>
+        <ul>
+          <li>Printed net · scissors · glue</li>
+          <li>Pencil &amp; coloured pencils</li>
+        </ul>
+      </div>
+
+      <div class="rubric">
+        <div class="rubric-title">Marking — Out of 10</div>
+        <div class="rubric-row"><div class="pts-badge">4</div><div class="rubric-text">Shape is built correctly</div></div>
+        <div class="rubric-row"><div class="pts-badge">2</div><div class="rubric-text">Facts (faces, edges, vertices) are correct</div></div>
+        <div class="rubric-row"><div class="pts-badge">2</div><div class="rubric-text">Comparison sentence makes sense</div></div>
+        <div class="rubric-row"><div class="pts-badge">1</div><div class="rubric-text">Neatness</div></div>
+        <div class="rubric-row"><div class="pts-badge">1</div><div class="rubric-text">Oral explanation</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SCIENCE -->
+  <div class="card science">
+    <div class="card-header">
+      <div class="subject-tag">Science</div>
+      <div class="card-title">Sun, Earth &amp;<br>Moon Model</div>
+      <div class="card-icon">🌍</div>
+    </div>
+    <div class="card-body">
+
+      <div class="task-block">
+        <h3>The Task</h3>
+        <p>Each student makes a moving Sun–Earth–Moon model and gives a <strong>1-minute</strong> explanation of why the Moon seems to change shape.</p>
+      </div>
+
+      <div class="rubric-title" style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#888;margin-bottom:8px;">Project Must Include</div>
+      <ul class="checklist">
+        <li>A labelled model (Sun, Earth, Moon)</li>
+        <li>3 facts about the system</li>
+        <li>Explanation of why the Moon appears to change shape</li>
+      </ul>
+
+      <div class="mini-cols">
+        <div class="mini-box">
+          <h4>🏠 At Home</h4>
+          <ul>
+            <li>Colour &amp; cut model pieces</li>
+            <li>Learn the 3 facts</li>
+          </ul>
+        </div>
+        <div class="mini-box">
+          <h4>🏫 At School</h4>
+          <ul>
+            <li>Assemble the model</li>
+            <li>Label the model</li>
+            <li>Present the explanation</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mini-box" style="margin-bottom:20px;">
+        <h4>🎨 Materials Needed</h4>
+        <ul>
+          <li>Printed template or card circles</li>
+          <li>Scissors · split pins · coloured pencils</li>
+        </ul>
+      </div>
+
+      <div class="rubric">
+        <div class="rubric-title">Marking — Out of 10</div>
+        <div class="rubric-row"><div class="pts-badge">3</div><div class="rubric-text">Model is complete and labelled correctly</div></div>
+        <div class="rubric-row"><div class="pts-badge">3</div><div class="rubric-text">Science facts are correct</div></div>
+        <div class="rubric-row"><div class="pts-badge">2</div><div class="rubric-text">Student explains Moon movement or phases clearly</div></div>
+        <div class="rubric-row"><div class="pts-badge">2</div><div class="rubric-text">Neatness and effort</div></div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- SHARED RUBRIC -->
+<p class="section-label">Suggested Shared Rubric (Optional)</p>
+<div class="rubric-panel">
+  <div class="rubric-panel-inner">
+    <div>
+      <h2>One Rubric<br>for All Three</h2>
+      <p>If preferred, this unified rubric can be applied across all three projects for consistency in grading.</p>
+    </div>
+    <div class="shared-rubric-rows">
+      <div class="sr-row"><div class="sr-badge">2</div><div class="sr-text">Completed on time</div></div>
+      <div class="sr-row"><div class="sr-badge">3</div><div class="sr-text">Shows correct understanding</div></div>
+      <div class="sr-row"><div class="sr-badge">2</div><div class="sr-text">Oral explanation is clear</div></div>
+      <div class="sr-row"><div class="sr-badge">2</div><div class="sr-text">Writing, labels, or recording are clear</div></div>
+      <div class="sr-row"><div class="sr-badge">1</div><div class="sr-text">Neatness and effort</div></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
